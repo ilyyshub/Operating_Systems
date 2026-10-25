@@ -130,6 +130,7 @@ mkfs/mkfs: mkfs/mkfs.c $K/fs.h $K/param.h
 .PRECIOUS: %.o
 
 UPROGS=\
+	$U/_sleep\
 	$U/_cat\
 	$U/_echo\
 	$U/_forktest\
@@ -143,17 +144,14 @@ UPROGS=\
 	$U/_sh\
 	$U/_stressfs\
 	$U/_usertests\
-	$U/_sleep\
 	$U/_grind\
-	$U/_args\
 	$U/_wc\
 	$U/_zombie\
 	$U/_logstress\
 	$U/_forphan\
 	$U/_dorphan\
 	$U/_sync\
-	$U/_mystat\
-	$U/_find\
+	$U/_sleep\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)
